@@ -4,10 +4,12 @@ import Image from 'next/image'
 import Mp_slider from '../Components/Mp_slider'
 import Mp_contatctus from '../Components/Mp_contatctus'
 import Mp_footer from '../Components/Mp_footer'
+import Mp_Navbar from '../Components/Mp_Navbar'
 
 const page = () => {
   return (
     <>
+    <Mp_Navbar/>
       <div className="font-serif w-full  flex justify-center items-center">
         <div className="relative h-[500px] w-[94%] flex justify-center items-center gap-10 bg-orange-50 rounded-3xl pl-8 mt-10 mb-20 pr-8 max-lg:h-[500px]  max-lg:pl-5 max-lg:pr-5 max-md:h-[700px] max-md:flex max-md:flex-col max-md:pl-4 max-md:pr-4">
           <div className="flex w-full flex-col items-start  gap-10 max-sm:flex-col max-sm:gap-10 ">

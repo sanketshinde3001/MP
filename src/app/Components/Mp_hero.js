@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Mp_navbar from "./mp_navbar";
 
 const Mp_hero = () => {
   return (
