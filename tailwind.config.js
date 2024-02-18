@@ -14,7 +14,11 @@ module.exports = {
       },
       backgroundColor: {
         'back': '#9b51e0', 
-      }
+      },
+      
+      fontFamily:{
+        fontbody:["Nunito Sans"]
+        }
     },
   },
   plugins: [require("daisyui")],
