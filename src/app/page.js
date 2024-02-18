@@ -7,13 +7,13 @@ import Mp_section6 from './Components/Mp_section6'
 import Mp_contatctus from './Components/Mp_contatctus'
 import Mp_footer from './Components/Mp_footer'
 import Mp_slider from './Components/Mp_slider'
-import Mp_navbar from './Components/Mp_navbar'
+// import Mp_navbar from './Components/Mp_navbar'
 
 const page = () => {
   
   return ( 
     <div>
-    <Mp_navbar/>  
+    {/* <Mp_navbar/>   */}
     <Mp_hero/>
     <Mp_stats/>
     <Mp_section1/>
