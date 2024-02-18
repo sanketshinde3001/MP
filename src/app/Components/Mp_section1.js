@@ -5,7 +5,7 @@ import Link from "next/link";
 const Mp_section1 = () => {
   return (
     <>
-    <div className="relative w-screen mb-5">
+    <div className="relative w-screen mb-20 mt-10">
       <div className="max-w-full h-screen ">
         <div className="bg-purple-600 h-4/5 w-4/5 bottom-14 rounded-r-3xl absolute z-1 max-sm:h-3/5"></div>
 

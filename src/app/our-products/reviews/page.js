@@ -6,10 +6,12 @@ import Mp_sec2inside_page5 from "@/app/Components/Mp_sec2inside_page5";
 import Mp_contatctus from "@/app/Components/Mp_contatctus";
 import Mp_footer from "@/app/Components/Mp_footer";;
 import React from "react";
+import Mp_navbar from "@/app/Components/Mp_navbar";
 
 const page = () => {
   return (
     <>
+      <Mp_navbar/>
       <Mp_sec2inside_page1
         title1={
           <>

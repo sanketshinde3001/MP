@@ -6,10 +6,12 @@ import Mp_sec2inside_page5 from "@/app/Components/Mp_sec2inside_page5";
 import Mp_contatctus from "@/app/Components/Mp_contatctus";
 import Mp_footer from "@/app/Components/Mp_footer";
 import React from "react";
+import Mp_navbar from "@/app/Components/Mp_navbar";
 
 const page = () => {
   return (
     <>
+      <Mp_navbar/>
       <Mp_sec2inside_page1
         title1="WeddingPro Insights: understand and maximize your ROI"
         description1="Our Insights tool is designed to give you a full view of your performance analytics all in one place, making it even easier to know how your Storefronts on The Knot and WeddingWire are working for you."
