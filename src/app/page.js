@@ -30,8 +30,7 @@ const page = () => {
     title="Boost your business’ credibility"
     description="Build your reputation by investing in wedding advertising on The Knot and WeddingWire, two of the most trusted wedding marketplaces hosting more than 9 million couple reviews."
     linkHref="our-products/reviews"
-    buttonText="Gain your Couple's trust"
-   margintop={20}/>
+    buttonText="Gain your Couple's trust"/>
     <Mp_section3/>
     <Mp_section2 
      borderColor="purple-700"
