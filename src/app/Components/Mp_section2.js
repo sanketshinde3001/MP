@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Section = ({ imageSrc,imagewidth,imageheight, topTag, title, description ,linkHref, buttonText }) => {
   return (
     <>
-    <div className={relative md:m-0 m-5 mb-8 md:mt-10}>
+    <div className="relative md:m-0 m-5 mb-8 md:mt-10">
     <div className="relative md:m-0 m-5 mb-20">
       <div className={`border-purple-700 border-2 absolute top-6 md:top-12 left-6 md:left-36 right-8 md:right-28 md:bottom-14 bottom-0 rounded-2xl z-20`}>          
       {topTag && (
