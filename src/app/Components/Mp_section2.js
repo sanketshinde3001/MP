@@ -6,6 +6,7 @@ const Section = ({ imageSrc,imagewidth,imageheight, topTag, title, description ,
   return (
     <>
     <div className={`relative md:m-0 m-5 mb-8 md:mt-${margintop}`}>
+    <div className="relative md:m-0 m-5 mb-20">
       <div className={`border-purple-700 border-2 absolute top-6 md:top-12 left-6 md:left-36 right-8 md:right-28 md:bottom-14 bottom-0 rounded-2xl z-20`}>          
       {topTag && (
             <span className="media-tag bg-purple-700 top-60 md:top-3/4 font-bold text-white text-justify align-middle p-2 md:p-3 absolute left-0 font-fontbody" >{topTag}</span>

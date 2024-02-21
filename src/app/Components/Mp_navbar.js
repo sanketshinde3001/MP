@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Mp_Navbar = () => {
+const Mp_navbar = () => {
   return (
     <div className="h-24 mb-10 shadow-md ">
       <div className="h-24 mb-8 z-[39] fixed w-full bg-white">
@@ -290,4 +290,4 @@ const Mp_Navbar = () => {
   );
 };
 
-export default Mp_Navbar;
+export default Mp_navbar;

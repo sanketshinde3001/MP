@@ -12,7 +12,7 @@ const Mp_stats = () => {
                 <p>leads delivered to pros annually</p>
             </div>
         </div>
-        <div className='flex items-center w-1/4 justify-between max-lg:w-1/2 mt-16 max-sm:mt-8   max-sm:w-5/6 max-sm:justify-evenly'>
+        <div className='flex items-center w-1/4 justify-between max-lg:w-1/2 mt-16 max-sm:mt-8  max-sm:w-5/6 max-sm:justify-evenly'>
             <div className='bg-[#eab308] p-5 max-xl:p-4 rounded-[50%] max-sm:p-6'> 
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mouse-pointer"><path d="m3 3 7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="m13 13 6 6"/></svg>
             </div>
