@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Section = ({ imageSrc,imagewidth,imageheight, topTag, title, description ,linkHref, buttonText , margintop}) => {
+const Section = ({ imageSrc,imagewidth,imageheight, topTag, title, description ,linkHref, buttonText }) => {
   return (
     <>
     <div className={relative md:m-0 m-5 mb-8 md:mt-10}>
