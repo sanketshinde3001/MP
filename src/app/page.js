@@ -28,7 +28,7 @@ const page = () => {
     description="Build your reputation by investing in wedding advertising on The Knot and WeddingWire, two of the most trusted wedding marketplaces hosting more than 9 million couple reviews."
     linkHref="our-products/reviews"
     buttonText="Gain your Couple's trust"
-    marginTop={0}/>
+   margintop={20}/>
     <Mp_section3/>
     <Mp_section2 
      borderColor="purple-700"
@@ -40,7 +40,7 @@ const page = () => {
      description="Our robust Insights tool measures your performance from every interaction to make it easy for you to view, track and understand the ROI of partnering with us."
      buttonText="Understand your ROI"
      linkHref="our-products/insights"
-     marginTop={20}
+     
     />
     <Mp_section5/>
     <Mp_section6/>
