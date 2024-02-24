@@ -3,12 +3,9 @@ import Link from 'next/link';
 
 const Mp_contatctus = () => {
   return (
-    <div>
-     <div className="hero bg-back  w-full  min-h-screen md:w-100 lg:w-100 xl:w-100 sm:w-full">
-     {/* <div className="bg-back  "> */}
-
+     <div className=" bg-back  w-full "  id="footerSection">
         
-        <div className="container flex flex-col md:flex-row justify-between items-center mx-4 md:mx-auto lg:mx-auto xl:mx-auto p-4 md:p-20 lg:p-20 xl:p-20">
+        <div className="container flex flex-col md:flex-row justify-between items-center md:mx-auto lg:mx-auto xl:mx-auto p-4 md:p-20 lg:p-20 xl:p-20">
           <div className="img--1">
       
           <img 
@@ -113,11 +110,8 @@ const Mp_contatctus = () => {
         </div>
       </div>
       
-      
-      
-         
-    </div>
+
   )
 }
 
-export default Mp_contatctus
+export default Mp_contatctus;

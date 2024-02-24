@@ -1,9 +1,8 @@
-import Link from 'next/link'
 import React from 'react'
 
 const Mp_cards = () => {
   return (
-    <div className='flex justify-center gap-10 px-10 bg-white max-sm:px-1 max-md:flex-col max-md:items-center max-md:justify-center max-md:align-middle max-md:gap-10  hover:text-white md:max-lg:px-3 md:max-lg:gap-4 my-10'>
+    <div className='flex justify-center gap-10 px-10 bg-white max-sm:px-1 max-md:flex-col max-md:items-center max-md:justify-center max-md:align-middle max-md:gap-10  hover:text-white md:max-lg:px-3 md:max-lg:gap-4'>
       <div className="card w-96 text-black shadow-xl max-md:w-[80%] max-sm:w-[94%]">
   <figure><img src="https://pros.weddingpro.com/wp-content/uploads/2023/09/Iris-Mannings-Photography-Kat-and-Amber-Vendor-With-Couple-Planner-076-1.png?w=1024" className=" object-cover h-[256px] w-full" alt="" /></figure>
   <div className="card-body top-44">
@@ -14,8 +13,7 @@ const Mp_cards = () => {
    
   </div>
 </div>     
-<Link href='/temp'> 
-<div className="card w-96 text-black shadow-xl max-md:w-[80%] max-sm:w-[94%]">
+ <div className="card w-96 text-black shadow-xl max-md:w-[80%] max-sm:w-[94%]">
   <figure><img src="https://pros.weddingpro.com/wp-content/uploads/2023/10/shutterstock_1937050396.jpg?w=1024" className=" object-cover h-[256px] w-full" alt="" /></figure>
   <div className="card-body">
   <div className="badge badge-secondary rounded-sm bg-purple-300 border-none px-4 py-4 font-semibold mb-4 hover:bg-purple-600 hover:text-white">EVENTS</div>
@@ -27,10 +25,7 @@ const Mp_cards = () => {
    
   </div>
 </div>
-</Link>
-
-<Link href="/temp">         
- <div className="card w-96 text-black shadow-xl max-md:w-[80%] max-sm:w-[94%] ">
+          <div className="card w-96 text-black shadow-xl max-md:w-[80%] max-sm:w-[94%] ">
   <figure ><img src="https://pros.weddingpro.com/wp-content/uploads/2021/05/Email-Series-Templates_ColorJoy-Stock.png?w=1024" className=" object-cover h-[256px] w-full"   /></figure>
   <div className="card-body">   
   <div className='flex flex-row gap-4 md:max-lg:flex-col md:max-lg:gap-0 '>
@@ -45,9 +40,9 @@ const Mp_cards = () => {
        back to leads, ask for reviews and deepen relationships with your couples.</p>
    
   </div>
-</div></Link>
+</div>
     </div>
   )
 }
 
-export default Mp_cards
+export default Mp_cards;

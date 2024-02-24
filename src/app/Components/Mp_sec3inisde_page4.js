@@ -1,6 +1,8 @@
+'use client'
+
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import {Link} from "react-scroll";
 
 const Mp_sec3inisde_page4 = ({ imagesrc4, title4, description4 }) => {
   return (
@@ -33,10 +35,16 @@ const Mp_sec3inisde_page4 = ({ imagesrc4, title4, description4 }) => {
             {description4}
           </p>
 
+          <Link
+        to="footerSection"  // Replace with the ID of your footer section
+        smooth={true}
+        duration={500}
+    >
           <button className="bg-white relative py-2 text-center rounded-full border border-purple-900 font-semibold  text-purple hover:bg-purple-900 hover:ring-purple-900 hover:text-white w-36">
-            {" "}
-            <Link href="/Mp_footer">Get started</Link>
+           
+            Get started
           </button>
+          </Link>
         </div>
       </div>
     </div>

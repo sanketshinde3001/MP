@@ -1,6 +1,8 @@
+'use client'
+
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import {Link} from "react-scroll";
 
 const Mp_sec3inside_page3 = ({ imagesrc3, title3, description3 }) => {
   return (
@@ -24,10 +26,16 @@ const Mp_sec3inside_page3 = ({ imagesrc3, title3, description3 }) => {
           <p className="text-lg mb-8   xl:2xl:text-lg lg:text-base md:text-xs  ">
             {description3}
           </p>
+          <Link
+        to="footerSection"  // Replace with the ID of your footer section
+        smooth={true}
+        duration={500}
+    >
           <button className="bg-white relative py-2 text-center rounded-full border border-purple-900 font-semibold  text-purple hover:bg-purple-900 hover:ring-purple-900 hover:text-white w-36">
-            {" "}
-            <Link href="/Mp_footer">Get started</Link>
+           
+            Get started
           </button>
+          </Link>
         </div>
 
         <figure className="wp-block-media-text__media relative right-24  md:w-5/12 max-md:w-full max-md:right-0   lg:pl-16    ">

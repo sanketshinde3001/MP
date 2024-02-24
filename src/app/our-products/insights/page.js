@@ -4,14 +4,13 @@ import Mp_sec2inside_page3 from "@/app/Components/Mp_sec2inside_page3";
 import Mp_sec2inside_page4 from "@/app/Components/Mp_sec2inside_page4";
 import Mp_sec2inside_page5 from "@/app/Components/Mp_sec2inside_page5";
 import Mp_contatctus from "@/app/Components/Mp_contatctus";
+
 import Mp_footer from "@/app/Components/Mp_footer";
 import React from "react";
-import Mp_navbar from "@/app/Components/Mp_navbar";
 
 const page = () => {
   return (
     <>
-      <Mp_navbar/>
       <Mp_sec2inside_page1
         title1="WeddingPro Insights: understand and maximize your ROI"
         description1="Our Insights tool is designed to give you a full view of your performance analytics all in one place, making it even easier to know how your Storefronts on The Knot and WeddingWire are working for you."
@@ -21,11 +20,9 @@ const page = () => {
         imagesrc2="https://pros.weddingpro.com/wp-content/uploads/2023/10/2_KeyBusiness-1.png"
         title2="Making key business decisions has never been easier"
         description2="Insights is a set of wedding business tools you can use to pulse-check your Storefronts’ analytics, drill down into each platform’s performance and get a deeper understanding of your business insights and lead tracking."
-        linkHref2="/Footer" //add link to the footer section here so that when user click the button the page should scrool down on the footer section
         buttonText2="Learn more"
         imagewidth2={570}
-        imageheight2={200}
-      />
+        imageheight2={200} />
       <Mp_sec2inside_page3
         imagesrc3="https://pros.weddingpro.com/wp-content/uploads/2023/10/3_PerformanceAnalytics-3.png"
         title3="Get your performance analytics in real time"

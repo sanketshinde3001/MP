@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Mp_footer = () => {
   return (
-    <>
+    <div>
     <div>
       <p className="text text-center italic text-sm m-5">Photo: Terri Baskin Photography |  Sarah Khan Event Styling, Amilye Saunders, Elegance By Roya; Iris Mannings Photography | Angelica & Co. Weddings, She Loves Me; Caroline Lima Photography;<br/> Arevalo & Co</p>
     </div>
@@ -107,7 +107,7 @@ const Mp_footer = () => {
    <hr />
 <footer className="footer items-center footer-center p-10 bg-base-950 text-base-content justify-center">
 
-  <copyright className="flex ">
+  <copyright className="flex items-center justify-evenly flex-wrap">
   <p className="mr-4 mb-2 sm:mb-0">© 2024 WeddingPro</p>
   <Link href="/temp"className="link link-hover mr-4">1-888-934-0949</Link>
   <Link href="/temp"className="link link-hover mr-4"> Web Accessibility</Link>
@@ -119,7 +119,7 @@ const Mp_footer = () => {
   </footer>
   </div>
       
-    </>
+    </div>
   );
 };
 

@@ -10,7 +10,6 @@ const Sec1_Card = (props) => {
       <br />
       <p className="mt-4 mb-12 text-lg  max-lg:text-base ">{props.desc}</p>
     </div>
-    
   );
 };
 

@@ -6,12 +6,10 @@ import Mp_sec2inside_page5 from "@/app/Components/Mp_sec2inside_page5";
 import Mp_contatctus from "@/app/Components/Mp_contatctus";
 import Mp_footer from "@/app/Components/Mp_footer";;
 import React from "react";
-import Mp_navbar from "@/app/Components/Mp_navbar";
 
 const page = () => {
   return (
     <>
-      <Mp_navbar/>
       <Mp_sec2inside_page1
         title1={
           <>
@@ -27,7 +25,6 @@ const page = () => {
         imagesrc2="https://pros.weddingpro.com/wp-content/uploads/2023/10/2_customerreviews.png"
         title2="Let past customer reviews do the selling for you"
         description2="Customer reviews build trust and credibility, boost your SEO and give invaluable social proof to your brand. With over 9.6 million couple reviews, The Knot and WeddingWire allow you to request, respond to and showcase your top reviews so couples can get insight into your business."
-        linkHref2=""
         buttonText2="Get started"
         imagewidth2={570}
         imageheight2={467}
@@ -36,7 +33,6 @@ const page = () => {
         imagesrc3="https://pros.weddingpro.com/wp-content/uploads/2023/10/WP_Phoenix_Reviews_1.gif?strip=all&quality=95"
         title3="Drive leads with reviews"
         description3="Social proof is a powerful tool that you can use to learn more bookings. In fact, wedding pros with reviews on their Storefronts on The Knot and WeddingWire recieve 2x more leads than vendore with no reviews."
-        linkHref3=""
         buttonText3="Sign up today"
         imagewidth3={670}
         imageheight3={955}
@@ -45,7 +41,6 @@ const page = () => {
         imagesrc4="https://pros.weddingpro.com/wp-content/uploads/2023/10/4_expert-6.png"
         title4="Position yourself as the expert that you are"
         description4="The Knot and WeddingWire allow you to easily request reviews with pre-populated templates and a unique link to drop into your client messages. Then, you can prominently feature your top reviews so you can always put your best foot forward."
-        linkHref4=""
         buttonText4="Learn more"
         imageheight4={1032}
         imagewidth4={1028}
