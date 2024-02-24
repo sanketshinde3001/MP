@@ -11,6 +11,7 @@ import Mp_contatctus from './Components/Mp_contatctus'
 import Mp_footer from './Components/Mp_footer'
 import Mp_slider from './Components/Mp_slider'
 import Mp_navbar from './Components/Mp_navbar'
+import SmallNavbar from './Components/Mp_navbar1'
 
 
 const page = () => {
@@ -18,6 +19,7 @@ const page = () => {
   return ( 
     <div className='font-fontbody'>
     <Mp_navbar/>
+    <SmallNavbar/>
     <Mp_hero/>
     <Mp_stats/>
     <Mp_section1/>
