@@ -1,796 +1,516 @@
-"use client";
-import React, { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
-import { TbCheckupList } from "react-icons/tb";
-import { MdPeopleOutline } from "react-icons/md";
-import { LuArmchair } from "react-icons/lu";
-import { SlCalculator } from "react-icons/sl";
-import { LiaBookSolid } from "react-icons/lia";
-import { CgProfile } from "react-icons/cg";
-import { RiCamera3Line } from "react-icons/ri";
-import { FiHeadphones } from "react-icons/fi";
-import { PiFlowerTulipLight } from "react-icons/pi";
-import { BsCameraReels } from "react-icons/bs";
-import { BiDish } from "react-icons/bi";
-import { GiLipstick } from "react-icons/gi";
-import { LiaUserTieSolid } from "react-icons/lia";
-import Link from 'next/link';
+"use client"
+import React, { useState } from "react";
+import { IoMdClose } from "react-icons/io";
+import Link from "next/link";
+
+const SignupForm = ({ onClose }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted");
+  };
+
+  return (
+    <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 border border-gray-300 rounded-md shadow-md z-40">
+      <div className="flex justify-between items-center mt-8 mb-4">
+        <p className="text-gray-600">
+          WeddingPro provides vendors with advertising solutions ans resources
+          designed to make running wedding businesses easier.
+        </p>
+        <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
+          <IoMdClose />
+        </button>
+      </div>
+      <div
+        className="modal-content"
+        style={{ maxHeight: "80vh", overflowY: "auto" }}
+      >
+        <div className="box">
+          <p className="text-gray-600 mb-4">
+            Fill out the form below to get in touch with us.
+          </p>
+          <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+            {/* First row */}
+            <div>
+              <div className="flex flex-col ">
+                <input
+                  type="text"
+                  id="first_name"
+                  name="first_name"
+                  placeholder="First Name *"
+                  className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-gray-300"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <div className="flex flex-col">
+                <input
+                  type="text"
+                  id="last_name"
+                  name="last_name"
+                  placeholder="Last Name *"
+                  className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500"
+                  required
+                />
+              </div>
+            </div>
+            {/* Second row */}
+            <div>
+              <div className="flex flex-col">
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Company *"
+                  className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <div className="flex flex-col ">
+                <select
+                  id="business_category"
+                  name="business_category"
+                  placeholder="Business Category *"
+                  className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500"
+                  required
+                >
+                  <option value="">Business Category *</option>
+                  <option value="ta">Travel Agent</option>
+                  <option value="wb">Wedding Bands</option>
+                  <option value="wc">Wedding Cakes</option>
+                  <option value="wd">Wedding Dresses</option>
+                  <option value="wh">Wedding Hair & Makeup</option>
+                  <option value="wp">Wedding Photography</option>
+                  <option value="wpl">Wedding Planners</option>
+                  <option value="bs">Bar Services & Beverages</option>
+                  <option value="c">Caterers</option>
+                  <option value="dl">Dance Lessons</option>
+                  <option value="dl2">Dance & Lighting</option>
+                  <option value="dj">DJs</option>
+                  <option value="mu">Musicians</option>
+                  <option value="fa">Favors</option>
+                  <option value="fl">Florists</option>
+                  <option value="in">Invitations</option>
+                  <option value="je">Jewelers</option>
+                  <option value="of">Officiants</option>
+                  <option value="pb">Photo Booths</option>
+                  <option value="ve">Venue</option>
+                  <option value="rd">Rehearsal Dinner </option>
+                  <option value="re">Rentals</option>
+                  <option value="li">Limos</option>
+                  <option value="vi">Videographers</option>
+                </select>
+              </div>
+            </div>
+            {/* Third row */}
+            <div>
+              <div className="flex flex-col">
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  placeholder="Phone *"
+                  className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <div className="flex flex-col ">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email *"
+                  className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500"
+                  required
+                />
+              </div>
+            </div>
+            {/* Fourth row */}
+            <div>
+              <div className="flex flex-col ">
+                <select
+                  id="country"
+                  name="country"
+                  placeholder="Country *"
+                  className="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-500"
+                  required
+                >
+                  <option value="">Country *</option>
+                  <option value="us">United States</option>
+                  <option value="ca">Canada</option>
+                  <option value="as">American Samoa</option>
+                  <option value="an">Anguilla</option>
+                  <option value="ab">Antigua + Barbuda</option>
+                  <option value="ar">Aruba</option>
+                  <option value="ba">Bahmas</option>
+                  <option value="bar">Barbados</option>
+                  <option value="bs">Belize</option>
+                  <option value="be">Bermuda</option>
+                  <option value="bvi">British Virgin Islands</option>
+                  <option value="ci">Cayman Islands</option>
+                  <option value="cr">Costa Rica</option>
+                  <option value="4522a">Curacao</option>
+                  <option value="345">Dominican Replublic</option>
+                  <option value="987">France</option>
+                  <option value="00">French Polynesia</option>
+                  <option value="87">Greece</option>
+                  <option value="888">Grenada</option>
+                  <option value="889">Guam</option>
+                  <option value="890">Italy</option>
+                  <option value="891">Jamaica</option>
+                  <option value="892">Marshall Islands</option>
+                  <option value="893">Mexico</option>
+                  <option value="894">Northern Mariana Islands</option>
+                  <option value="895">Palau</option>
+                  <option value="896">Portugal</option>
+                  <option value="897">Puerto Rico</option>
+                  <option value="898">Spain</option>
+                  <option value="899">St. Barts</option>
+                </select>
+              </div>
+            </div>
+  
+            {/* Sixth row */}
+            <div className="col-span-2">
+              <div className="flex items-center ">
+                <label htmlFor="terms" className="flex items-start mb-4">
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    name="terms"
+                    className="form-checkbox h-5 w-5 text-indigo-600 border-gray-300 rounded focus:outline-none focus:shadow-outline mt-1 mr-2"
+                    required
+                  />
+                  <span className="inline-block">
+                    By submitting and sharing your information you agree to
+                    WeddingPro’s terms of use and privacy policy.
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div className="col-span-2">
+              <button
+                type="submit"
+                className={`bg-purple-900 py-2 px-4 align-middle rounded-full border border-purple-900 font-bold text-white hover:bg-white hover:ring-purple-900 hover:text-purple-900 w-36 mx-auto md:mx-0`}
+              >
+                Get in touch
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+  
+};
+ 
 
 const Mp_navbar = () => {
-  const [showDrawer, setShowDrawer] = useState(false);
-  const [hoveredOption, setHoveredOption] = useState(null);
-  const [selectedOptionContent, setSelectedOptionContent] = useState(null);
-  const [venueTypes, setVenueTypes] = useState([]);
-  const [groupedVenueTypes1, setGroupedVenueTypes1] = useState([]);
-  const [groupedVenueTypes2, setGroupedVenueTypes2] = useState([]);
-  const [groupedVenueTypes3, setGroupedVenueTypes3] = useState([]);
-  const [groupedVenueTypes4, setGroupedVenueTypes4] = useState([]);
+  const [showMenu, setShowMenu] = useState(false);
+  const [showSignupForm, setShowSignupForm] = useState(false);
+  const [showProductsDropdown, setShowProductsDropdown] = useState(false);
+  const [showAboutDropdown, setShowAboutDropdown] = useState(false);
+  const [showResourcesDropdown, setShowResourcesDropdown] = useState(false);
+  const [showSearchBar, setShowSearchBar] = useState(false);
 
-  const router = useRouter();
-  const navbarRef = useRef(null);
-
-  // For list
-  const ListWithIcon = ({ icon, text, size, color }) => (
-    <div className="flex items-center cursor-pointer mb-4">
-      {React.cloneElement(icon, { size, color })}
-      <span className="ml-2 text-black hover:text-primary">{text}</span>
-    </div>
-  );
-
-  const List = ({ text }) => (
-    <div className="flex items-center cursor-pointer">
-      <span className=" text-black hover:text-primary">{text}</span>
-    </div>
-  );
-
-  // useEffect(() => {
-  //   const fetchVenueTypes = async () => {
-  //     try {
-  //       // Fetch venue types from the API using the imported function
-  //       const data = await getVenueTypes();
-  //       setVenueTypes(data);
-
-  //       // Group venue types into sets of 4 when venueTypes state changes
-  //       const groupedTypes1 = groupVenueTypesIntoSetsOfFour(data.slice(0, 4));
-  //       const groupedTypes2 = groupVenueTypesIntoSetsOfFour(data.slice(4, 8));
-  //       const groupedTypes3 = groupVenueTypesIntoSetsOfFour(data.slice(8, 12));
-  //       const groupedTypes4 = groupVenueTypesIntoSetsOfFour(data.slice(12, 16));
-
-  //       setGroupedVenueTypes1(groupedTypes1);
-  //       setGroupedVenueTypes2(groupedTypes2);
-  //       setGroupedVenueTypes3(groupedTypes3);
-  //       setGroupedVenueTypes4(groupedTypes4);
-  //     } catch (error) {
-  //       console.error("Error fetching venue types:", error);
-  //     }
-  //   };
-
-  //   fetchVenueTypes();
-  // }, []);
-
-  // const groupVenueTypesIntoSetsOfFour = (venueTypes) => {
-  //   const groupedVenueTypes = [];
-  //   for (let i = 0; i < venueTypes.length; i += 4) {
-  //     groupedVenueTypes.push(venueTypes.slice(i, i + 4));
-  //   }
-  //   return groupedVenueTypes;
-  // };
-
-  const handleClick = () => {
-    router.push("/user/login");
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
   };
 
-  const handleClick2 = () => {
-    router.push("/user/signup");
-  };
-
-  const handleOptionHover = (option) => {
-    setHoveredOption(option.toLowerCase());
-    setShowDrawer(true);
-  };
-
-  const handleOptionLeave = (e) => {
-    const toElement = e.relatedTarget || e.toElement;
-
-    // Check if the mouse is leaving the option but not entering the flyout
-    if (
-      hoveredOption &&
-      toElement &&
-      !hasClass(toElement, "flyout") &&
-      !hasClass(toElement, "option") &&
-      !isDescendant(toElement, navbarRef.current)
-    ) {
-      handleDrawerClose();
+  const toggleDropdown = (dropdown) => {
+    switch (dropdown) {
+      case 'products':
+        setShowProductsDropdown(!showProductsDropdown);
+        setShowAboutDropdown(false);
+        setShowResourcesDropdown(false);
+        break;
+      case 'about':
+        setShowAboutDropdown(!showAboutDropdown);
+        setShowProductsDropdown(false);
+        setShowResourcesDropdown(false);
+        break;
+      case 'resources':
+        setShowResourcesDropdown(!showResourcesDropdown);
+        setShowProductsDropdown(false);
+        setShowAboutDropdown(false);
+        break;
+      default:
+        break;
     }
   };
 
-  const handleDrawerLeave = (e) => {
-    const toElement = e.relatedTarget || e.toElement;
-
-    // Check if the mouse is leaving the flyout but not entering an option or the drawer
-    if (
-      toElement &&
-      !hasClass(toElement, "flyout") &&
-      !hasClass(toElement, "option") &&
-      !isDescendant(toElement, navbarRef.current) &&
-      !isDescendant(toElement, document.querySelector(".drawer-content"))
-    ) {
-      handleDrawerClose();
-    }
+  const toggleSignupForm = () => {
+    setShowSignupForm(!showSignupForm);
   };
 
-  // Helper function to check if an element has a specific class
-  const hasClass = (element, className) => {
-    return (
-      element &&
-      element.className &&
-      element.className.split(" ").includes(className)
-    );
+  const handleSearchClick = () => {
+    setShowSearchBar(!showSearchBar);
   };
 
-  // Helper function to check if an element is a descendant of another element
-  const isDescendant = (child, parent) => {
-    let node = child?.parentNode;
-
-    while (node !== null) {
-      if (node === parent) {
-        return true;
-      }
-      node = node?.parentNode;
-    }
-
-    return false;
-  };
-
-  const handleDrawerClose = () => {
-    setHoveredOption(null);
-    setShowDrawer(false);
-    setSelectedOptionContent(null);
+  const handleCloseClick = () => {
+    setShowSearchBar(false);
   };
 
   return (
     <>
-      <nav
-        ref={navbarRef}
-        className=" hidden xl:block bg-grey-100 p-2 mx-4 sm:mx-20 font-fontbody relative  mt-4 pb-4"
-      >
-        <div className="pb-4 border-b-2 border-slate-800 absolute h-2  top-0 left-0"></div>
-        <div className="container mx-auto flex justify-between items-center ">
-          <div className="flex justify-evenly gap-5 xl:gap-5  2xl:gap-10">
-            <Link href='/'>
-            <div className="text-white">
-              
-              <h1 className="text-black text-3xl sm:text-lg md:text-xl lg:text-3xl font-semibold opacity-80">
-                COMPANY NAME
-              </h1>
-              
+      {/* Mobile Menu */}
+      <nav className="md:hidden fixed top-0 left-0 right-0 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 z-50 py-4">
+        <div className="max-w-screen-xl flex items-center justify-between mx-auto my-0">
+          {/* Menu Button for Mobile */}
+          <div className="md:hidden">
+            <button
+              className="text-gray-500 hover:text-gray-700 focus:outline-none"
+              onClick={toggleMenu}
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+          </div>
+          {/* WeddingPro Logo */}
+          <div className="flex items-center space-x-3 rtl:space-x-reverse mb-4 md:mb-0">
+            <a href="#">
+              <img src="https://pros.weddingpro.com/wp-content/themes/weddingpro-theme/dist/svg/logo.svg" className="h-8" alt="Flowbite Logo" />
+            </a>
+          </div>
+        </div>
+        {/* Mobile Menu Items */}
+        <div className={`${showMenu ? 'block' : 'hidden'} px-4 pt-2 pb-4 space-y-1 sm:px-0`}>
+          <a href="#" className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Our Customers</a>
+          <div className="space-y-1">
+            <div className="relative">
+              <button onClick={() => toggleDropdown('products')} className="hover:bg-gray-700 text-white block w-full px-3 py-2 rounded-md text-left text-base font-medium">
+                Products
+                <svg className="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fillRule="evenodd" d="M10 3l-7 9h14l-7-9z" />
+                </svg>
+              </button>
+              {showProductsDropdown && (
+                <div className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-xs sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                  <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                    <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                      <a href="#" className="hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium text-gray-900">Storefront</a>
+                      <a href="#" className="hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium text-gray-900">Inbox</a>
+                      <a href="#" className="hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium text-gray-900">Insights</a>
+                      <a href="#" className="hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium text-gray-900">Reviews</a>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
+          </div>
+          <a href="#" className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">About WeddingPro</a>
+          <a href="#" className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
+        </div>
+      </nav>       
+      {/* desktop */}
+      <nav className="fixed top-0 left-0 right-0 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 z-50 py-4">
+        <div className="max-w-screen-xl flex flex-col md:flex-row items-center justify-between mx-auto p-4">
+          {/* Logo */}
+          <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse mb-4 md:mb-0">
+            <img src="https://pros.weddingpro.com/wp-content/themes/weddingpro-theme/dist/svg/logo.svg" className="h-8" alt="Flowbite Logo" />
+          </a>
+          {/* Menu Button for Desktop */}
+          <button
+            className="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none"
+            onClick={toggleMenu}
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+          {/* Products Section */}
+          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+            <div>
+              <div className="relative ml-4 mr-5">
+                <span className="cursor-pointer" onClick={() => toggleDropdown("products")}>Products</span>
+                <span className="ml-1 cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`h-4 w-4 inline-block transform transition-transform duration-300 ${
+                      showProductsDropdown ? "rotate-180" : ""
+                    }`}
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    onClick={() => toggleDropdown("products")}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 3l-7 9h14l-7-9z"
+                    />
+                  </svg>
+                </span>
+                {showProductsDropdown && (
+                  <div className="absolute z-10 mt-10 w-28 bg-white font-bold no-underline hover:underline-offset-1">
+                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500 ">Products </a>
+                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Storefront</a>
+                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Inbox</a>
+                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Insights</a>
+                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Reviews</a>
+                    {/* Add more dropdown items as needed */}
+                  </div>
+                )}
+              </div>
+            </div>
+            <div>
+              <div className="relative ml-4 mr-5">
+                <span className="cursor-pointer" onClick={() => toggleDropdown("about")}>About WeddingPro</span>
+                <span className="ml-1 cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`h-4 w-4 inline-block transform transition-transform duration-300 ${
+                      showAboutDropdown ? "rotate-180" : ""
+                    }`}
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    onClick={() => toggleDropdown("about")}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 3l-7 9h14l-7-9z"
+                    />
+                  </svg>
+                </span>
+                {showAboutDropdown && (
+                  <div className="absolute z-10 mt-10 w-52 bg-white ">
+                    {/* About WeddingPro dropdown content */}
+                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">About WeddingPro</a>
+                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Fellowship for Change</a>
+                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Educator Program</a>
+                  </div>
+                )}
+              </div>
+            </div>
+            <a href="#" className="text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-500  mr-10">Our Customers</a>
+            <div>
+              <div className="relative ml-4 mr-5">
+                <span className="cursor-pointer" onClick={() => toggleDropdown("resources")}>Resources</span>
+                <span className="ml-1 cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`h-4 w-4 inline-block transform transition-transform duration-300 ${
+                      showResourcesDropdown ? "rotate-180" : ""
+                    }`}
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    onClick={() => toggleDropdown("resources")}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 3l-7 9h14l-7-9z"
+                    />
+                  </svg>
+                </span>
+                {showResourcesDropdown && (
+                  <div className="absolute z-10 mt-10 w-44 bg-white ">
+                    {/* Resources dropdown content */}
+                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Resources</a>
+                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Reports</a>
+                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Webinars</a>
+                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Events</a>
+                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Vendor Support</a>
+                  </div>
+                )}
+              </div>
+            </div>
+            <a href="#" className="text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-500">Blog</a>
+          </div>
+
+          {/* Login and Signup Button */}
+          <div className="flex items-center space-x-4">
+            {/* Search Bar Icon */}
+            
+            {/* Login Button */}
+            <Link href="/login" className="font-bold text-lg text-purple-900 underline-offset-8 decoration-purple-900">
+              Log in
             </Link>
-
-            <div className="hidden md:flex gap-10 text-black leading-8 self-center my-auto max-md:max-w-full">
-              {/* Option 1 */}
-              <div
-                className="relative group"
-                onMouseEnter={() => handleOptionHover("PLANNING TOOLS")}
-                onMouseLeave={handleOptionLeave}
-              >
-                <a
-                  href="#"
-                  className="text-black cursor-pointer transition duration-100 ease-in-out underline-effect "
-                  // onClick={() => handleOptionClick(option)}
-                >
-                  PLANNING TOOLS
-                </a>
-                {hoveredOption === "planning tools" && (
-                  <div
-                    className="fixed w-52 top-0 -translate-x-1/4 z-50 drawer-content shadow-xl"
-                    style={{
-                      marginTop: "89px",
-                      background: "white",
-                      padding: "1rem",
-                      // boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-                      height: "45vh",
-                    }}
-                    onMouseLeave={handleDrawerLeave}
-                  >
-                    {selectedOptionContent ? (
-                      <p>{selectedOptionContent}</p>
-                    ) : (
-                      <div className="py-5 px-20 flex ">
-                        <div className="w-2/5">
-                          <h1 className="text-black font-semibold mb-5 ">
-                            Organize with ease
-                          </h1>
-                          <div className="w-full flex ">
-                            <div className="w-1/2 space-y-5">
-                            <Link href="/tools/checklist">
-                             <ListWithIcon
-                                icon={<TbCheckupList />}
-                                text="Checklist"
-                                size={24}
-                              />
-                             </Link>
-                             <Link href="/tools/seating">
-                              <ListWithIcon
-                                icon={<LuArmchair />}
-                                text="Seating Chart"
-                                size={24}
-                              />
-                                </Link>
-                                <Link href="/tools/vendors">
-                              <ListWithIcon
-                                icon={<LiaBookSolid />}
-                                text="Vendors"
-                                size={24}
-                              />
-                                </Link>
-                              
-                            </div>
-
-                            <div className="w-1/2 space-y-5">
-                            <Link href="/tools/guests">
-                              <ListWithIcon
-                                icon={<MdPeopleOutline />}
-                                text="Guests"
-                                size={24}
-                              />
-                                </Link>
-                                <Link href="/tools/budget">
-                              <ListWithIcon
-                                icon={<SlCalculator />}
-                                text="Budget"
-                                size={24}
-                              />
-                                </Link>
-
-                              {/* <ListWithIcon icon={<TbWorldWww />} text=" Website" size={24}  /> */}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="divider divider-horizontal"></div>
-
-                        {/* <div className="w-2/5">
-                          <h1 className="text-black font-semibold mb-5 ">
-                            Personalize your event
-                          </h1>
-
-                          <div className="w-full flex ">
-                            <div className="w-1/2 space-y-1">
-                              <List text="Hotel Blocks" />
-                              <List text="Date Finder" />
-                              <List text="Hashtag Generator" />
-                            </div>
-
-                            <div className="w-1/2 space-y-1">
-                              <List text="Date Finder" />
-                              <List text="Cost Guide" />
-                            </div>
-                          </div>
-                        </div> */}
-                        <div className="w-2/5"></div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-
-              {/* Option 2 */}
-              <div
-                className="relative group"
-                onMouseEnter={() => handleOptionHover("VENUES")}
-                onMouseLeave={handleOptionLeave}
-              >
-                <a
-                  href="#"
-                  className="text-black cursor-pointer transition duration-100 ease-in-out underline-effect "
-                  onClick={(e) => {
-                    e.preventDefault(); // Prevent default anchor tag behavior
-                    // handleOptionClick("VENUES"); // Optionally handle other logic before navigation
-                    router.push("/shared"); // Navigate to the desired route
-                  }}
-                >
-                  VENUES
-                </a>
-                {hoveredOption === "venues" && (
-                  <div
-                    className="fixed w-52 top-0 -translate-x-1/4 z-50 drawer-content shadow-xl"
-                    style={{
-                      marginTop: "89px",
-                      background: "white",
-                      padding: "1rem",
-                      // boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-                      height: "45vh",
-                    }}
-                    onMouseLeave={handleDrawerLeave}
-                  >
-                    {selectedOptionContent ? (
-                      <p>{selectedOptionContent}</p>
-                    ) : (
-                      <div className="py-5 px-20 flex ">
-                        <div className="w-full">
-                          <h1 className="text-black font-semibold mb-5 ">
-                            Find your venue
-                          </h1>
-                          <div className="w-full flex ">
-                            {groupedVenueTypes1.map(
-                              (venueTypeSet, setIndex) => (
-                                <div key={setIndex} className="w-1/4 space-y-4">
-                                  {venueTypeSet.map((venueType) => (
-                                    <div
-                                      key={venueType.id}
-                                      onClick={() => {
-                                        console.log("Clicked!");
-                                        router.push(
-                                          `/shared?venue_id=${venueType.id}`
-                                        );
-                                      }}
-                                    >
-                                      <h2 className="text-black font-semibold mb-3">
-                                        {venueType.name}
-                                      </h2>
-
-                                      <List
-                                        key={venueType.id}
-                                        text={venueType.type}
-                                      />
-                                    </div>
-                                  ))}
-                                </div>
-                              )
-                            )}
-
-                            {groupedVenueTypes2.map(
-                              (venueTypeSet, setIndex) => (
-                                <div key={setIndex} className="w-1/4 space-y-4">
-                                  {venueTypeSet.map((venueType) => (
-                                    <div
-                                      key={venueType.id}
-                                      onClick={() => {
-                                        console.log("Clicked!");
-                                        router.push(
-                                          `/shared?venue_id=${venueType.id}`
-                                        );
-                                      }}
-                                    >
-                                      <h2 className="text-black font-semibold mb-3">
-                                        {venueType.name}
-                                      </h2>
-
-                                      <List
-                                        key={venueType.id}
-                                        text={venueType.type}
-                                        onClick={() => {
-                                          // Assuming you have access to the router object
-                                          router.push(
-                                            `/shared?venue_id=${venueType.id}`
-                                          );
-                                        }}
-                                      />
-                                    </div>
-                                  ))}
-                                </div>
-                              )
-                            )}
-
-                            {groupedVenueTypes3.map(
-                              (venueTypeSet, setIndex) => (
-                                <div key={setIndex} className="w-1/4 space-y-4">
-                                  {venueTypeSet.map((venueType) => (
-                                    <div
-                                      key={venueType.id}
-                                      onClick={() => {
-                                        console.log("Clicked!");
-                                        router.push(
-                                          `/shared?venue_id=${venueType.id}`
-                                        );
-                                      }}
-                                    >
-                                      <h2 className="text-black font-semibold mb-3">
-                                        {venueType.name}
-                                      </h2>
-
-                                      <List
-                                        key={venueType.id}
-                                        text={venueType.type}
-                                        onClick={() => {
-                                          // Assuming you have access to the router object
-                                          router.push(
-                                            `/shared?venue_id=${venueType.id}`
-                                          );
-                                        }}
-                                      />
-                                    </div>
-                                  ))}
-                                </div>
-                              )
-                            )}
-
-                            {groupedVenueTypes4.map(
-                              (venueTypeSet, setIndex) => (
-                                <div key={setIndex} className="w-1/4 space-y-4">
-                                  {venueTypeSet.map((venueType) => (
-                                    <div
-                                      key={venueType.id}
-                                      onClick={() => {
-                                        console.log("Clicked!");
-                                        router.push(
-                                          `/shared?venue_id=${venueType.id}`
-                                        );
-                                      }}
-                                    >
-                                      <h2 className="text-black font-semibold mb-3">
-                                        {venueType.name}
-                                      </h2>
-
-                                      <List
-                                        key={venueType.id}
-                                        text={venueType.type}
-                                        onClick={() => {
-                                          // Assuming you have access to the router object
-                                          router.push(
-                                            `/shared?venue_id=${venueType.id}`
-                                          );
-                                        }}
-                                      />
-                                    </div>
-                                  ))}
-                                </div>
-                              )
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-
-              {/* Option 3 */}
-              <div
-                className="relative group"
-                onMouseEnter={() => handleOptionHover("VENDORS")}
-                onMouseLeave={handleOptionLeave}
-              >
-                <a
-                  href="#"
-                  className="text-black cursor-pointer transition duration-100 ease-in-out underline-effect "
-                  onClick={(e) => {
-                    e.preventDefault(); 
-                    router.push("/shared/vendor"); 
-                  }}
-                >
-                  VENDORS
-                </a>
-                {hoveredOption === "vendors" && (
-                  <div
-                    className="fixed top-0 -translate-x-1/4 w-52 z-50 drawer-content shadow-xl"
-                    style={{
-                      marginTop: "89px",
-                      background: "white",
-                      padding: "1rem",
-                      // boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-                      height: "45vh",
-                    }}
-                    onMouseLeave={handleDrawerLeave}
-                  >
-                    {selectedOptionContent ? (
-                      <p>{selectedOptionContent}</p>
-                    ) : (
-                      <div className="py-5 px-20 flex ">
-                        <div className="w-full">
-                          <h1 className="text-black font-semibold mb-5 ">
-                            Start hiring your vendors
-                          </h1>
-                          <div className="w-full flex ">
-                            <div className="w-1/4 space-y-5">
-                              <div
-                                onClick={() => {
-                                  console.log("Clicked!");
-                                  router.push(`/shared/vendor?vendor_id=1`);
-                                }}
-                              >
-                                <ListWithIcon
-                                  icon={<RiCamera3Line />}
-                                  text="Photography"
-                                  size={24}
-                                />
-                              </div>
-                              <div
-                                onClick={() => {
-                                  console.log("Clicked!");
-                                  router.push(`/shared/vendor?vendor_id=5`);
-                                }}
-                              >
-                                <ListWithIcon
-                                  icon={<LiaBookSolid />}
-                                  text="Event Planning"
-                                  size={24}
-                                />
-                              </div>
-                              <div
-                                onClick={() => {
-                                  console.log("Clicked!");
-                                  router.push(`/shared/vendor?vendor_id=4`);
-                                }}
-                              >
-                                <ListWithIcon
-                                  icon={<PiFlowerTulipLight />}
-                                  text="Flowers"
-                                  size={24}
-                                />
-                              </div>
-                            </div>
-
-                            <div className="w-1/4 space-y-5">
-                              <div
-                                onClick={() => {
-                                  console.log("Clicked!");
-                                  router.push(`/shared/vendor?vendor_id=6`);
-                                }}
-                              >
-                                <ListWithIcon
-                                  icon={<FiHeadphones />}
-                                  text="DJs"
-                                  size={24}
-                                />
-                              </div>
-                              <div
-                                onClick={() => {
-                                  console.log("Clicked!");
-                                  router.push(`/shared/vendor?vendor_id=3`);
-                                }}
-                              >
-                                <ListWithIcon
-                                  icon={<GiLipstick />}
-                                  text="Hair & Makeup"
-                                  size={24}
-                                />
-                              </div>
-                              <div
-                                onClick={() => {
-                                  console.log("Clicked!");
-                                  router.push(`/shared/vendor?vendor_id=7`);
-                                }}
-                              >
-                                <ListWithIcon
-                                  icon={<BiDish />}
-                                  text="Catering"
-                                  size={24}
-                                />
-                              </div>
-                            </div>
-
-                            <div className="w-1/4 space-y-5">
-                              <div
-                                onClick={() => {
-                                  console.log("Clicked!");
-                                  router.push(`/shared/vendor?vendor_id=2`);
-                                }}
-                              >
-                                <ListWithIcon
-                                  icon={<BsCameraReels />}
-                                  text="Videography"
-                                  size={24}
-                                />
-                              </div>
-                              <div
-                                onClick={() => {
-                                  console.log("Clicked!");
-                                  router.push(`/shared/vendor?vendor_id=8`);
-                                }}
-                              >
-                                <ListWithIcon
-                                  icon={<LiaUserTieSolid />}
-                                  text="Cakes"
-                                  size={24}
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-
-              {/* Option 4 */}
-              <div
-                className="relative group"
-                onMouseEnter={() => handleOptionHover("FORUMS")}
-                onMouseLeave={handleOptionLeave}
-              >
-                <a
-                  href="#"
-                  className="text-black cursor-pointer transition duration-100 ease-in-out underline-effect"
-                  // onClick={() => handleOptionClick(option)}
-                >
-                  FORUMS
-                </a>
-                {hoveredOption === "forums" && (
-                  <div
-                    className="fixed inset-0 z-50 drawer-content shadow-xl"
-                    style={{
-                      marginTop: "89px",
-                      background: "white",
-                      padding: "1rem",
-                      // boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-                      height: "45vh",
-                    }}
-                    onMouseLeave={handleDrawerLeave}
-                  >
-                    {selectedOptionContent ? (
-                      <p>{selectedOptionContent}</p>
-                    ) : (
-                      <div className="py-5 px-20 flex ">
-                        <div className="w-full">
-                          <h1 className="text-black font-semibold mb-5 ">
-                            Forums
-                          </h1>
-                          <div className="flex justify-center p-10 text-4xl text-black">
-                            Coming Soon
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-
-              {/* Option 5 */}
-              <div
-                className="relative group"
-                onMouseEnter={() => handleOptionHover("DRESSES")}
-                onMouseLeave={handleOptionLeave}
-              >
-                <a
-                  href="#"
-                  className="text-black cursor-pointer transition duration-100 ease-in-out underline-effect "
-                  // onClick={() => handleOptionClick(option)}
-                >
-                  DRESSES
-                </a>
-                {hoveredOption === "dresses" && (
-                  <div
-                    className="fixed inset-0 z-50 drawer-content shadow-xl"
-                    style={{
-                      marginTop: "89px",
-                      background: "white",
-                      padding: "1rem",
-                      // boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-                      height: "45vh",
-                    }}
-                    onMouseLeave={handleDrawerLeave}
-                  >
-                    {selectedOptionContent ? (
-                      <p>{selectedOptionContent}</p>
-                    ) : (
-                      <div className="py-5 px-20 flex ">
-                        <div className="w-full">
-                          <h1 className="text-black font-semibold mb-5 ">
-                            The latest in bridal fashion
-                          </h1>
-                          <div className="flex justify-center p-10 text-4xl text-black">
-                            Coming Soon
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-
-              {/* Option 6 */}
-              <div
-                className="relative group"
-                onMouseEnter={() => handleOptionHover("IDEAS")}
-                onMouseLeave={handleOptionLeave}
-              >
-                <a
-                  href="#"
-                  className="text-black cursor-pointer transition duration-100 ease-in-out underline-effect"
-                  // onClick={() => handleOptionClick(option)}
-                >
-                  IDEAS
-                </a>
-                {hoveredOption === "ideas" && (
-                  <div
-                    className="fixed inset-0 z-50 drawer-content shadow-xl"
-                    style={{
-                      marginTop: "89px",
-                      background: "white",
-                      padding: "1rem",
-                      // boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-                      height: "45vh",
-                    }}
-                    onMouseLeave={handleDrawerLeave}
-                  >
-                    {selectedOptionContent ? (
-                      <p>{selectedOptionContent}</p>
-                    ) : (
-                      <div className="py-5 px-20 flex ">
-                        <div className="w-full">
-                          <h1 className="text-black font-semibold mb-5 ">
-                            Get wedding inspiration
-                          </h1>
-                          <div className="flex justify-center p-10 text-4xl text-black">
-                            Coming Soon
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-
-              {/* Option 7 */}
-              <div
-                className="relative group "
-                onMouseEnter={() => handleOptionHover("INVITATIONS")}
-                onMouseLeave={handleOptionLeave}
-              >
-                <a
-                  href="#"
-                  className="text-black cursor-pointer transition duration-100 ease-in-out underline-effect "
-                  // onClick={() => handleOptionClick(option)}
-                >
-                  INVITATIONS
-                </a>
-                {hoveredOption === "invitations" && (
-                  <div
-                    className="fixed inset-0 z-50 drawer-content shadow-xl"
-                    style={{
-                      marginTop: "89px",
-                      background: "white",
-                      padding: "1rem",
-                      // boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-                      height: "45vh",
-                    }}
-                    onMouseLeave={handleDrawerLeave}
-                  >
-                    {selectedOptionContent ? (
-                      <p>{selectedOptionContent}</p>
-                    ) : (
-                      <div className="py-5 px-20 flex ">
-                        <div className="w-full">
-                          <h1 className="text-black font-semibold mb-5 ">
-                            Shop by category
-                          </h1>
-                          <div className="flex justify-center p-10 text-4xl text-black">
-                            Coming Soon
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="hidden xl:hidden 2xl:block md:flex items-center">
-            <button
-              className="text-primary font-semibold mr-5 cursor-pointer"
-              onClick={handleClick}
-            >
-              LOGIN
-            </button>
-            <button
-              className="text-primary font-semibold mr-5 cursor-pointer"
-              onClick={handleClick2}
-            >
-              JOIN NOW
-            </button>
-          </div>
-
-          <div className="2xl:hidden">
-            <CgProfile
-              className="text-black text-2xl mt-1 opacity-70 cursor-pointer"
-              onClick={handleClick}
-            />
+            {/* Signup Button */}
+            <button onClick={toggleSignupForm} className="bg-white py-2 px-4 relative rounded-full border border-purple-900 font-[700] text-lg  text-purple-900 hover:bg-purple-900 hover:ring-purple-900 hover:text-white text-center">Sign Up</button>
+            {showSignupForm && <SignupForm onClose={toggleSignupForm} />}
+            <button onClick={handleSearchClick} className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-black dark:htext-bluey-700 focus:outline-none">
+            <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 10a6 6 0 1112 0 6 6 0 01-12 0zM18 18l5-5m0 0l-5-5m5 5H6" />
+            </svg>
+          </button>
           </div>
         </div>
       </nav>
+      {/* Search Bar */}
+      {showSearchBar && (
+  <div className="absolute top-0 left-0 right-0  bg-white py-2 z-50" style={{'--t-transition-timing': '1s', '--t-transition-ease': 'ease-in'}}>
+    <div className="max-w-screen-xl flex flex-row items-center justify-between mx-auto p-4 ">
+      <div className="flex flex-row items-center justify-between w-full  border rounded border-grey-500" style={{'transition': 'width var(--t-transition-timing) var(--t-transition-ease)'}}>
+        {/* Search Input */}
+        <div className="flex-grow mr-2">
+          <form role="search" id="searchform" className="search-form" method="get" action="https://pros.weddingpro.com/">
+            <div className="autocomplete-field">
+              <input type="search" id="search-field" value="" placeholder="Search..." name="s" className="w-full px-3 py-3  focus:outline-none" />
+              <div id="autocomplete-wrapper" className="autocomplete-content-wrapper"></div>
+            </div>
+            <input type="hidden" name="post_type" value="all" />
+          </form>
+        </div>
+        {/* Search Button */}
+        <button
+          type="submit"
+          className="search-submit border rounded-lg bg-purple-800 hover:bg-purple-900 px-2 py-1 font-bold text-white mr-2 flex items-center"
+        >
+          <span className="search-submit__label text-center">Search</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="#fff"
+            viewBox="0 0 21 20"
+            className="ml-1"
+          >
+            <path
+              fill="none"
+              stroke="#fff"
+              strokeWidth="2"
+              d="M9.78 11.22l-4.78 4.78"
+            />
+            <circle cx="9.5" cy="5.5" r="4" />
+          </svg>
+        </button>
+
+{/* Close Button */}
+<button onClick={handleCloseClick} className="search-close border rounded-lg bg-white border-purple-950 px-2 py-1 font-bold text-purple-950 flex items-center mr-2">
+  <span className="search-submit__label mr-2 ">Close</span>
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 23 22">
+    <path fill="currentColor" d="M2.384.116.616 1.884 9.732 11 .616 20.116l1.768 1.768 9.116-9.116 9.116 9.116 1.768-1.768L13.268 11l9.116-9.116L20.616.116 11.5 9.232 2.384.116Z" />
+  </svg>
+</button>
+      </div>
+    </div>
+  </div>
+)}
+
+
     </>
   );
 };

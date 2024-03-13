@@ -7,7 +7,7 @@ import { Link } from "react-scroll";
 const Mp_hero = () => {
   return (
     <>
-      <div className="w-full xl:h-screen relative mt-3">
+      <div className="w-full xl:h-screen relative mt-20">
         <div className=" mx-auto  container w-full flex-col xl:flex-row flex  justify-center xl:max-xl:gap-2 gap-16 xl:items-start items-center ">
           <div className=" absolute bg-yellow-50 rounded-[5%] h-4/5 max-xl:h-screen top-0 z-[-11] w-[96%]"></div>
           {/* Column  1 */}
@@ -61,7 +61,7 @@ const Mp_hero = () => {
 
           {/* Column  2 */}
           <div className="xl:w-[80%] w-full flex justify-between  gap-4 xl:h-screen ">
-            <div className="w-[48%] justify-evenly  flex flex-col gap-12 mt-12 xl:max-2xl:mt-2 ">
+            <div className="w-[48%] justify-evenly  flex flex-col gap-12 mt-12 xl:max-2xl:mt-40 2xl:mt-80">
               <div className="w-full relative">
                 <div className=" bg-purple-300 px-8 py-3 font-bold absolute text-xl xl:bottom-10 xl:-left-20 max-xl:top-40 max-sm:-right-28 max-xl:-right-16 max-sm:top-16 max-sm:text-sm max-sm:px-2 ">
                   Passionate professionals
@@ -71,7 +71,7 @@ const Mp_hero = () => {
                   src="https://pros.weddingpro.com/wp-content/uploads/2023/10/1_HP_Hero1.png"
                   width={500}
                   height={500}
-                  className="rounded-xl "
+                  className="rounded-xl"
                   alt="Picture of the author"
                 />
               </div>
@@ -104,7 +104,7 @@ const Mp_hero = () => {
           </div>
         </div>
         <div className="w-full container mx-auto max-sm:pl-4">
-          <div className="xl:absolute xl:-bottom-40 max-xl:mt-5">
+          <div className="xl:absolute xl:-bottom-40 max-xl:mt-20">
             <h2 className="text-4xl xl:max-2xl:pl-5 w-[30%] max-sm:w-[80%] max-xl:w-[45%] leading-relaxed font-bold">
               Let WeddingPro help your business thrive
             </h2>
