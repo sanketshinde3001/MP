@@ -29,7 +29,7 @@ const Section = ({ imageSrc,imagewidth,imageheight, topTag, title, description ,
             {description}
           </p>
            
-            <div className='bg-white py-2 px-4 relative rounded-full border border-purple-900 font-[700] text-lg  text-purple-900 hover:bg-purple-900 hover:ring-purple-900 hover:text-white text-center w-52 lg:w-60 md:w-52 mx-auto md:mx-0 z-40'>
+            <div className='bg-white py-2 px-4 relative rounded-full border border-purple-900 font-[700] text-lg  text-purple-900 hover:bg-purple-900 hover:ring-purple-900 hover:text-white text-center w-60 lg:w-60 md:w-52 mx-auto md:mx-0 z-40'>
               <Link href={linkHref}>
                 {buttonText}
               </Link>
