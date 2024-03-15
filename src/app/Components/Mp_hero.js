@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -7,9 +7,9 @@ import { Link } from "react-scroll";
 const Mp_hero = () => {
   return (
     <>
-      <div className="w-full xl:h-screen relative mt-20">
+      <div className="w-full xl:h-screen relative my-36">
         <div className=" mx-auto  container w-full flex-col xl:flex-row flex  justify-center xl:max-xl:gap-2 gap-16 xl:items-start items-center ">
-          <div className=" absolute bg-yellow-50 rounded-[5%] h-4/5 max-xl:h-screen top-0 z-[-11] w-[96%]"></div>
+          <div className=" absolute bg-yellow-50 rounded-[5%] h-4/5 max-xl:h-screen top-0 z-[-11] w-[96%] "></div>
           {/* Column  1 */}
           <div className="w-[95%] ">
             <div className="w-full xl:pl-10 md:pl-16 pl-4 ">
@@ -50,18 +50,16 @@ const Mp_hero = () => {
                 smooth={true}
                 duration={1000}
               >
-              <button className="px-6 py-3 bg-purple-700 text-white rounded-3xl font-semibold cursor-pointer  xl:mb-60">
-                Let's Partner Together
-              </button>
+                <button className="px-6 py-3 bg-purple-700 text-white rounded-3xl font-semibold cursor-pointer  xl:mb-60">
+                  Let's Partner Together
+                </button>
               </Link>
-
-
             </div>
           </div>
 
           {/* Column  2 */}
-          <div className="xl:w-[80%] w-full flex justify-between  gap-4 xl:h-screen ">
-            <div className="w-[48%] justify-evenly  flex flex-col gap-12 mt-12 xl:max-2xl:mt-40 2xl:mt-80">
+          <div className="xl:w-[80%] w-full flex justify-between  gap-4 xl:h-screen my-10">
+            <div className="w-[48%] justify-evenly  flex flex-col gap-12 ">
               <div className="w-full relative">
                 <div className=" bg-purple-300 px-8 py-3 font-bold absolute text-xl xl:bottom-10 xl:-left-20 max-xl:top-40 max-sm:-right-28 max-xl:-right-16 max-sm:top-16 max-sm:text-sm max-sm:px-2 ">
                   Passionate professionals
