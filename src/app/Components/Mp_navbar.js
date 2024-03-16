@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import Link from "next/link";
@@ -173,7 +173,7 @@ const SignupForm = ({ onClose }) => {
                 </select>
               </div>
             </div>
-  
+
             {/* Sixth row */}
             <div className="col-span-2">
               <div className="flex items-center ">
@@ -205,35 +205,32 @@ const SignupForm = ({ onClose }) => {
       </div>
     </div>
   );
-  
 };
- 
-
 const Mp_navbar = () => {
-  const [showMenu, setShowMenu] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(false);
   const [showSignupForm, setShowSignupForm] = useState(false);
   const [showProductsDropdown, setShowProductsDropdown] = useState(false);
   const [showAboutDropdown, setShowAboutDropdown] = useState(false);
   const [showResourcesDropdown, setShowResourcesDropdown] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
+  const toggleSignupForm = () => {
+    setShowSignupForm(!showSignupForm);
   };
 
   const toggleDropdown = (dropdown) => {
     switch (dropdown) {
-      case 'products':
+      case "products":
         setShowProductsDropdown(!showProductsDropdown);
         setShowAboutDropdown(false);
         setShowResourcesDropdown(false);
         break;
-      case 'about':
+      case "about":
         setShowAboutDropdown(!showAboutDropdown);
         setShowProductsDropdown(false);
         setShowResourcesDropdown(false);
         break;
-      case 'resources':
+      case "resources":
         setShowResourcesDropdown(!showResourcesDropdown);
         setShowProductsDropdown(false);
         setShowAboutDropdown(false);
@@ -243,275 +240,325 @@ const Mp_navbar = () => {
     }
   };
 
-  const toggleSignupForm = () => {
-    setShowSignupForm(!showSignupForm);
-  };
-
   const handleSearchClick = () => {
     setShowSearchBar(!showSearchBar);
   };
 
   const handleCloseClick = () => {
+    setShowNavbar(false);
     setShowSearchBar(false);
   };
 
   return (
     <>
-      {/* Mobile Menu */}
-      <nav className="md:hidden fixed top-0 left-0 right-0 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 z-50 py-4">
-        <div className="max-w-screen-xl flex items-center justify-between mx-auto my-0">
-          {/* Menu Button for Mobile */}
-          <div className="md:hidden">
+      <div className="fixed top-0 left-0 right-0 bg-white rounded-none border border-gray-100 font-fontbody z-50 md:py-4">
+        <div className="max-w-screen-xl mx-auto  flex md:justify-between ">
+          {/* Menu Bar */}
+          <div className="flex items-center space-x-4 h-10 w-8 px-5 py-8">
             <button
-              className="text-gray-500 hover:text-gray-700 focus:outline-none"
-              onClick={toggleMenu}
+              className="md:hidden focus:outline-none"
+              onClick={() => setShowNavbar(!showNavbar)}
             >
               <svg
+                xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
+                {showNavbar ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
               </svg>
             </button>
           </div>
-          {/* WeddingPro Logo */}
-          <div className="flex items-center space-x-3 rtl:space-x-reverse mb-4 md:mb-0">
-            <a href="#">
-              <img src="https://pros.weddingpro.com/wp-content/themes/weddingpro-theme/dist/svg/logo.svg" className="h-8" alt="Flowbite Logo" />
-            </a>
-          </div>
-        </div>
-        {/* Mobile Menu Items */}
-        <div className={`${showMenu ? 'block' : 'hidden'} px-4 pt-2 pb-4 space-y-1 sm:px-0`}>
-          <a href="#" className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Our Customers</a>
-          <div className="space-y-1">
-            <div className="relative">
-              <button onClick={() => toggleDropdown('products')} className="hover:bg-gray-700 text-white block w-full px-3 py-2 rounded-md text-left text-base font-medium">
-                Products
-                <svg className="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10 3l-7 9h14l-7-9z" />
-                </svg>
-              </button>
-              {showProductsDropdown && (
-                <div className="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-xs sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
-                  <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
-                    <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                      <a href="#" className="hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium text-gray-900">Storefront</a>
-                      <a href="#" className="hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium text-gray-900">Inbox</a>
-                      <a href="#" className="hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium text-gray-900">Insights</a>
-                      <a href="#" className="hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium text-gray-900">Reviews</a>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-          <a href="#" className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">About WeddingPro</a>
-          <a href="#" className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium">Blog</a>
-        </div>
-      </nav>       
-      {/* desktop */}
-      <nav className="fixed top-0 left-0 right-0 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 z-50 py-4">
-        <div className="max-w-screen-xl flex flex-col md:flex-row items-center justify-between mx-auto p-4">
           {/* Logo */}
-          <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse mb-4 md:mb-0">
-            <img src="https://pros.weddingpro.com/wp-content/themes/weddingpro-theme/dist/svg/logo.svg" className="h-8" alt="Flowbite Logo" />
-          </a>
-          {/* Menu Button for Desktop */}
-          <button
-            className="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none"
-            onClick={toggleMenu}
-          >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          <div className="flex justify-between gap-20 items-center  max-md:items-start max-md:flex-col">
+            <div>
+              <a href="#" className="mx-32">
+                <img
+                  src="https://pros.weddingpro.com/wp-content/themes/weddingpro-theme/dist/svg/logo.svg"
+                  classname="px-32"
+                  alt="Flowbite Logo"
+                />
+              </a>
+            </div>
+            <div
+              className={`md:flex flex-grow ${showNavbar ? "block" : "hidden"}`}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
-          </button>
-          {/* Products Section */}
-          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
-            <div>
-              <div className="relative ml-4 mr-5">
-                <span className="cursor-pointer" onClick={() => toggleDropdown("products")}>Products</span>
-                <span className="ml-1 cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`h-4 w-4 inline-block transform transition-transform duration-300 ${
-                      showProductsDropdown ? "rotate-180" : ""
-                    }`}
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    onClick={() => toggleDropdown("products")}
+              <div className="flex flex-col justify-between text-xl max-md:flex-1 gap-7 md:flex-row md:items-center  items-start space-y-4 md:space-y-0  md:pt-0  md:w-auto  w-52 md:h-auto  h-60">
+                <Dropdown
+                  title="Products"
+                  showDropdown={showProductsDropdown}
+                  toggleDropdown={() => toggleDropdown("products")}
+                >
+                  <a
+                    href="#"
+                    className="block  py-2  text-black hover:text-sky-500"
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 3l-7 9h14l-7-9z"
-                    />
-                  </svg>
-                </span>
-                {showProductsDropdown && (
-                  <div className="absolute z-10 mt-10 w-28 bg-white font-bold no-underline hover:underline-offset-1">
-                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500 ">Products </a>
-                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Storefront</a>
-                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Inbox</a>
-                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Insights</a>
-                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Reviews</a>
-                    {/* Add more dropdown items as needed */}
-                  </div>
-                )}
+                    Products
+                  </a>
+                  <a href="#" className="block  text-black hover:text-sky-500">
+                    Storefront
+                  </a>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-black hover:text-sky-500"
+                  >
+                    Inbox
+                  </a>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-black hover:text-sky-500"
+                  >
+                    Insights
+                  </a>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-black hover:text-sky-500"
+                  >
+                    Reviews
+                  </a>
+                </Dropdown>
+                <Dropdown
+                  title="About WeddingPro"
+                  showDropdown={showAboutDropdown}
+                  toggleDropdown={() => toggleDropdown("about")}
+                >
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-black hover:text-sky-500"
+                  >
+                    About WeddingPro
+                  </a>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-black hover:text-sky-500"
+                  >
+                    Fellowship for Change
+                  </a>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-black hover:text-sky-500"
+                  >
+                    Educator Program
+                  </a>
+                </Dropdown>
+                <a href="#" className="text-gray-900 ">
+                  Our Customers
+                </a>
+                <Dropdown
+                  title="Resources"
+                  showDropdown={showResourcesDropdown}
+                  toggleDropdown={() => toggleDropdown("resources")}
+                >
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-black hover:text-sky-500"
+                  >
+                    Resources
+                  </a>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-black hover:text-sky-500"
+                  >
+                    Reports
+                  </a>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-black hover:text-sky-500"
+                  >
+                    Webinars
+                  </a>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-black hover:text-sky-500"
+                  >
+                    Events
+                  </a>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-black hover:text-sky-500"
+                  >
+                    Vendor Support
+                  </a>
+                </Dropdown>
+                <a href="#" className="text-gray-900 ">
+                  Blog
+                </a>
               </div>
             </div>
-            <div>
-              <div className="relative ml-4 mr-5">
-                <span className="cursor-pointer" onClick={() => toggleDropdown("about")}>About WeddingPro</span>
-                <span className="ml-1 cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`h-4 w-4 inline-block transform transition-transform duration-300 ${
-                      showAboutDropdown ? "rotate-180" : ""
-                    }`}
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    onClick={() => toggleDropdown("about")}
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 3l-7 9h14l-7-9z"
-                    />
-                  </svg>
-                </span>
-                {showAboutDropdown && (
-                  <div className="absolute z-10 mt-10 w-52 bg-white ">
-                    {/* About WeddingPro dropdown content */}
-                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">About WeddingPro</a>
-                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Fellowship for Change</a>
-                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Educator Program</a>
-                  </div>
-                )}
-              </div>
-            </div>
-            <a href="#" className="text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-500  mr-10">Our Customers</a>
-            <div>
-              <div className="relative ml-4 mr-5">
-                <span className="cursor-pointer" onClick={() => toggleDropdown("resources")}>Resources</span>
-                <span className="ml-1 cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`h-4 w-4 inline-block transform transition-transform duration-300 ${
-                      showResourcesDropdown ? "rotate-180" : ""
-                    }`}
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    onClick={() => toggleDropdown("resources")}
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 3l-7 9h14l-7-9z"
-                    />
-                  </svg>
-                </span>
-                {showResourcesDropdown && (
-                  <div className="absolute z-10 mt-10 w-44 bg-white ">
-                    {/* Resources dropdown content */}
-                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Resources</a>
-                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Reports</a>
-                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Webinars</a>
-                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Events</a>
-                    <a href="#" className="block px-4 py-2 text-black hover:text-sky-500">Vendor Support</a>
-                  </div>
-                )}
-              </div>
-            </div>
-            <a href="#" className="text-gray-900 hover:text-blue-700 dark:text-white dark:hover:text-blue-500">Blog</a>
+            {/* Navbar */}
           </div>
-
-          {/* Login and Signup Button */}
-          <div className="flex items-center space-x-4">
-            {/* Search Bar Icon */}
-            
-            {/* Login Button */}
-            <Link href="/login" className="font-bold text-lg text-purple-900 underline-offset-8 decoration-purple-900">
+          <div className=" flex flex-col  md:flex-row max-md:flex-col text-xl max-md:flex-none items-center space-y-4 md:space-y-0 md:space-x-4 md:ml-10">
+            <a
+              href="#"
+              className={`md:flex flex-shrink  ${
+                showNavbar ? "block" : "hidden"
+              }`}
+            >
               Log in
-            </Link>
-            {/* Signup Button */}
-            <button onClick={toggleSignupForm} className="bg-white py-2 px-4 relative rounded-full border border-purple-900 font-[700] text-lg  text-purple-900 hover:bg-purple-900 hover:ring-purple-900 hover:text-white text-center">Sign Up</button>
-            {showSignupForm && <SignupForm onClose={toggleSignupForm} />}
-            <button onClick={handleSearchClick} className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-black dark:htext-bluey-700 focus:outline-none">
-            <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 10a6 6 0 1112 0 6 6 0 01-12 0zM18 18l5-5m0 0l-5-5m5 5H6" />
-            </svg>
-          </button>
+            </a>
+            <button
+              onClick={toggleSignupForm}
+              className="bg-white px-5 py-4 relative rounded-full border border-purple-900 font-[700] text-lg  text-purple-900 hover:bg-purple-900 hover:ring-purple-900 hover:text-white text-center"
+            >
+              Sign Up
+            </button>
+            <button
+              onClick={handleSearchClick}
+              className="p-2 rounded-lg bg-purple-900 hover:bg-purple-950 focus:outline-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="#fff"
+                viewBox="0 0 21 20"
+                className="ml-1"
+              >
+                <path
+                  fill="none"
+                  stroke="#fff"
+                  strokeWidth="2"
+                  d="M9.78 11.22l-4.78 4.78"
+                />
+                <circle cx="9.5" cy="5.5" r="4" />
+              </svg>
+            </button>
           </div>
         </div>
-      </nav>
+      </div>
       {/* Search Bar */}
       {showSearchBar && (
-  <div className="absolute top-0 left-0 right-0  bg-white py-2 z-50" style={{'--t-transition-timing': '1s', '--t-transition-ease': 'ease-in'}}>
-    <div className="max-w-screen-xl flex flex-row items-center justify-between mx-auto p-4 ">
-      <div className="flex flex-row items-center justify-between w-full  border rounded border-grey-500" style={{'transition': 'width var(--t-transition-timing) var(--t-transition-ease)'}}>
-        {/* Search Input */}
-        <div className="flex-grow mr-2">
-          <form role="search" id="searchform" className="search-form" method="get" action="https://pros.weddingpro.com/">
-            <div className="autocomplete-field">
-              <input type="search" id="search-field" value="" placeholder="Search..." name="s" className="w-full px-3 py-3  focus:outline-none" />
-              <div id="autocomplete-wrapper" className="autocomplete-content-wrapper"></div>
-            </div>
-            <input type="hidden" name="post_type" value="all" />
-          </form>
-        </div>
-        {/* Search Button */}
-        <button
-          type="submit"
-          className="search-submit border rounded-lg bg-purple-800 hover:bg-purple-900 px-2 py-1 font-bold text-white mr-2 flex items-center"
+        <div
+          className="fixed top-0 left-0 right-0 bg-white py-2 z-50 font-fontbody"
+          style={{
+            "--t-transition-timing": "1s",
+            "--t-transition-ease": "ease-in",
+          }}
         >
-          <span className="search-submit__label text-center">Search</span>
+          <div className="max-w-screen-xl flex flex-row items-center justify-between mx-auto p-4 ">
+            <div
+              className="flex flex-row items-center justify-between w-full  border rounded border-grey-500"
+              style={{
+                transition:
+                  "width var(--t-transition-timing) var(--t-transition-ease)",
+              }}
+            >
+              {/* Search Input */}
+              <div className="flex-grow mr-2">
+                <form
+                  role="search"
+                  id="searchform"
+                  className="search-form"
+                  method="get"
+                  action="https://pros.weddingpro.com/"
+                >
+                  <div className="autocomplete-field">
+                    <input
+                      type="search"
+                      id="search-field"
+                      value=""
+                      placeholder="Search..."
+                      name="s"
+                      className="w-full px-3 py-3  focus:outline-none"
+                    />
+                    <div
+                      id="autocomplete-wrapper"
+                      className="autocomplete-content-wrapper"
+                    ></div>
+                  </div>
+                  <input type="hidden" name="post_type" value="all" />
+                </form>
+              </div>
+              {/* Search Button */}
+              <button
+                type="submit"
+                className="search-submit border rounded-lg bg-purple-800 hover:bg-purple-900 px-2 py-1 font-bold text-white mr-2 flex items-center"
+              >
+                <span className="search-submit__label text-center">Search</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="#fff"
+                  viewBox="0 0 21 20"
+                  className="ml-1"
+                >
+                  <path
+                    fill="none"
+                    stroke="#fff"
+                    strokeWidth="2"
+                    d="M9.78 11.22l-4.78 4.78"
+                  />
+                  <circle cx="9.5" cy="5.5" r="4" />
+                </svg>
+              </button>
+              {/* Close Button */}
+              <button
+                onClick={handleCloseClick}
+                className="search-close border rounded-lg bg-white border-purple-950 px-2 py-1 font-bold text-purple-950 flex items-center mr-2"
+              >
+                <span className="search-submit__label mr-2 ">Close</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  viewBox="0 0 23 22"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M2.384.116.616 1.884 9.732 11 .616 20.116l1.768 1.768 9.116-9.116 9.116 9.116 1.768-1.768L13.268 11l9.116-9.116L20.616.116 11.5 9.232 2.384.116Z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+const Dropdown = ({ title, showDropdown, toggleDropdown, children }) => {
+  return (
+    <div>
+      <div className="relative ">
+        <span className="cursor-pointer" onClick={toggleDropdown}>
+          {title}
+        </span>
+        <span className="ml-1 cursor-pointer ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="#fff"
-            viewBox="0 0 21 20"
-            className="ml-1"
+            className={`h-4 w-4 inline-block transform transition-transform duration-300 ${
+              showDropdown ? "rotate-180" : ""
+            }`}
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            onClick={toggleDropdown}
           >
-            <path
-              fill="none"
-              stroke="#fff"
-              strokeWidth="2"
-              d="M9.78 11.22l-4.78 4.78"
-            />
-            <circle cx="9.5" cy="5.5" r="4" />
+            <path fillRule="evenodd" d="M10 3l-7 9h14l-7-9z" />
           </svg>
-        </button>
-
-{/* Close Button */}
-<button onClick={handleCloseClick} className="search-close border rounded-lg bg-white border-purple-950 px-2 py-1 font-bold text-purple-950 flex items-center mr-2">
-  <span className="search-submit__label mr-2 ">Close</span>
-  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 23 22">
-    <path fill="currentColor" d="M2.384.116.616 1.884 9.732 11 .616 20.116l1.768 1.768 9.116-9.116 9.116 9.116 1.768-1.768L13.268 11l9.116-9.116L20.616.116 11.5 9.232 2.384.116Z" />
-  </svg>
-</button>
+        </span>
+        {showDropdown && (
+          <div className="absolute z-10 mt-10 w-max bg-white">{children}</div>
+        )}
       </div>
     </div>
-  </div>
-)}
-
-
-    </>
   );
 };
 

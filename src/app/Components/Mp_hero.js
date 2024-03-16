@@ -58,7 +58,7 @@ const Mp_hero = () => {
           </div>
 
           {/* Column  2 */}
-          <div className="xl:w-[80%] w-full flex justify-between  gap-4 xl:h-screen my-10">
+          <div className="xl:w-[80%] w-full flex justify-between  gap-4 xl:h-screen my-12">
             <div className="w-[48%] justify-evenly  flex flex-col gap-12 ">
               <div className="w-full relative">
                 <div className=" bg-purple-300 px-8 py-3 font-bold absolute text-xl xl:bottom-10 xl:-left-20 max-xl:top-40 max-sm:-right-28 max-xl:-right-16 max-sm:top-16 max-sm:text-sm max-sm:px-2 ">
